@@ -242,7 +242,12 @@ func (h *UpgradeAwareHandler) ServeHTTP(w http.ResponseWriter, req *http.Request
 	}
 
 	// create the target location to use for the reverse proxy
-	reverseProxyLocation := &url.URL{Scheme: h.Location.Scheme, Host: h.Location.Host}
+	reverseProxyLocation := &url.URL{
+		Scheme:     h.Location.Scheme,
+		Host:       h.Location.Host,
+		ForceQuery: h.Location.ForceQuery,
+		RawQuery:   h.Location.RawQuery,
+	}
 	if h.AppendLocationPath {
 		reverseProxyLocation.Path = h.Location.Path
 	}

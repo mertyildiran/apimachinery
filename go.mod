@@ -1,6 +1,6 @@
 // This is a generated file. Do not edit directly.
 
-module mertyildiran/apimachinery
+module github.com/mertyildiran/apimachinery
 
 go 1.16
 
